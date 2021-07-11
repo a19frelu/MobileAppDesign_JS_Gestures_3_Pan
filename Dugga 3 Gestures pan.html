@@ -195,7 +195,10 @@
         event.target.classList.add("text-truncate");
       }
     }
-    function init() {
+
+    // Function who executes when page is loading in.
+    function init() 
+    {
 
       showPage(12);
       initHammer();
@@ -236,32 +239,70 @@
 
     function swipe(direction)
     {
-        if(swipepage==0){
-            if(direction==1){
-                showSwipePage('page2','inright','page1','outleft',1);
-            }else{
-                showSwipePage('page1','outright','page3','inleft',2);    
-            }
-        }else if(swipepage==1){
-            if(direction==1){
-                showSwipePage('page3','inright','page2','outleft',2);
-            }else{
-                showSwipePage('page2','outright','page1','inleft',0);
-            }
-        }else if(swipepage==2){
-            if(direction==1){
-                showSwipePage('page1','inright','page3','outleft',0);
-            }else{
-                showSwipePage('page3','outright','page2','inleft',1);    
-            }
+      if(swipepage==0){
+        if(direction==1){
+          showSwipePage('page2','inright','page1','outleft',1);
+        }else{
+          showSwipePage('page1','outright','page3','inleft',2);    
         }
+    }else if(swipepage==1){
+        if(direction==1){
+          showSwipePage('page3','inright','page2','outleft',2);
+        }else{
+          showSwipePage('page2','outright','page1','inleft',0);
+        }
+    }else if(swipepage==2){
+        if(direction==1){
+           showSwipePage('page1','inright','page3','outleft',0);
+        }else{
+           showSwipePage('page3','outright','page2','inleft',1);    
+        }
+      }
     }
 
-    function initHammer(){
-        var element = document.getElementById("karusell");
-        var hammertime = Hammer(element);
-        hammertime.on("swiperight", function(event) { swipe(-1) });
-        hammertime.on("swipeleft", function(event) { swipe(1) });
+    function initHammer()
+    {
+      var element = document.getElementById("karusell");
+      var hammertime = Hammer(element);
+      hammertime.on("swiperight", function(event) { swipe(-1) });
+      hammertime.on("swipeleft", function(event) { swipe(1) });
+    }
+
+    // PANNING functionality
+    function panend(deltaX)
+    {
+      document.getElementById('panpage1').style.display="none";
+      document.getElementById('dialog1').style.display="none";                  
+      document.getElementById('dialog2').style.display="none";
+ 
+      if(deltaX>100){
+        document.getElementById('dialog2').style.display="block";
+      }else if(deltaX<-100){
+        document.getElementById('dialog1').style.display="block";                  
+      }else{
+        document.getElementById('panpage1').style.display="block";                
+        document.getElementById("panpage1").style.left="0px";
+      }
+    }
+ 
+    function pan(deltaX)
+    {
+      console.log(deltaX);
+      document.getElementById('panpage1').style.display="block";
+      document.getElementById('dialog1').style.display="none";                  
+      document.getElementById('dialog2').style.display="none";
+      document.getElementById('panpage1').style.left=deltaX+"px";
+    }
+
+    function initHammer()
+    {
+      // Get element and connect a Hammer.js object to it
+      var element = document.getElementById("container");
+      var hammertime = Hammer(element);
+
+      // Attach functions to each event
+      hammertime.on("panmove", function(event) { pan(event.deltaX); });    
+      hammertime.on("panend", function(event) { panend(event.deltaX); });
     }
 
   </script>
