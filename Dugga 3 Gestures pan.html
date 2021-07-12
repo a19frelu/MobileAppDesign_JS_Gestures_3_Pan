@@ -64,10 +64,12 @@
     /* ----- PAN page styling and positioning ----- */
     #outer-container {
       position:absolute;
+      align-items: center;
+      text-align: center;
       top:25%;
-      left:25%;
-      right:25%;
-      bottom:25%;
+      left:0%;
+      right:0%;
+      bottom:30%;
       overflow:hidden;
       }
 
@@ -82,16 +84,17 @@
       }
 
       #panpage1 {
-        background:#fed;
+        background:rgb(177, 177, 177);
         left:0%;
         display:block
       }
 
       #dialog1 {
-        background:#def;
-        }
+        background:rgb(131, 253, 94);
+      }
+
       #dialog2 {
-        background:#fde;
+        background:rgb(250, 67, 98);
       }
 
       .panpage {
@@ -154,11 +157,17 @@
       .dialog {
         width:300px;
         max-width:80%;
-        height:200px;
+        height:100px;
         max-height:70%;
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
         display:none;
-        position:relative;}
+        position:relative;
+      }
+
+      #page12 p {
+        margin-top: 430px;
+        text-align: center;
+      }
 
   </style>
 
@@ -1286,8 +1295,8 @@
     <div id="outer-container">
       <div id="container">
         <div id="panpage1" class="panpage">
+          <img src="bild3.jpg">
           <h1>PAGE 1</h1>
-          <p>Pan right to like!</p>
           <div class="menu-container">
             <div id="dissBtn" class="button" onclick="panend(200);">I diss!</div>
             <div id="likeBtn" class="button" onclick="panend(-200);">I like!</div>
@@ -1309,6 +1318,7 @@
         </div>
       </div>
     </div>
+    <p>Pan right to like or left to disslike!</p>
   </div>
 </body>
 </html>
