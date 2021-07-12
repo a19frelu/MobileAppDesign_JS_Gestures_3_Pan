@@ -109,6 +109,17 @@
         display:none
       }
 
+      .panpage img {
+        position: relative;
+        max-width: 380px;;
+        max-height: 380px;
+        z-index: 1;
+      }
+
+      .panpage p {
+        z-index: 10;
+      }
+
       .dialog-container {
         display:flex;
         justify-content:flex-end;
@@ -170,6 +181,10 @@
         margin-top: 430px;
         text-align: center;
         z-index: 5000;
+      }
+
+      .dialog-container .button {
+        background-color: #5f6aff;
       }
 
   </style>
@@ -1299,7 +1314,7 @@
       <div id="container">
         <div id="panpage1" class="panpage">
           <img src="bild3.jpg">
-          <h1>PAGE 1</h1>
+          <p>Pan right to like or left to disslike!</p>
           <div class="menu-container">
             <div id="dissBtn" class="button" onclick="panend(200);">I diss!</div>
             <div id="likeBtn" class="button" onclick="panend(-200);">I like!</div>
@@ -1307,19 +1322,18 @@
         </div>
         <div id="dialog1" class="dialog">
           <h1>You liked the poet!</h1>
-          <div class="dialog-container">
-            <div class="button" onclick="pan(0);">Ok</div>
-          </div>
+        </div>
+        <div class="dialog-container">
+          <div class="button" onclick="pan(0);">Ok</div>
         </div>
         <div id="dialog2" class="dialog">
           <h1>You DISSliked the poet!</h1>
-          <div class="dialog-container">
-            <div class="button" onclick="pan(0);">Ok</div>
-          </div>
+        </div>
+        <div class="dialog-container">
+          <div class="button" onclick="pan(0);">Ok</div>
         </div>
       </div>
     </div>
-    <p>Pan right to like or left to disslike!</p>
   </div>
 </body>
 </html>
