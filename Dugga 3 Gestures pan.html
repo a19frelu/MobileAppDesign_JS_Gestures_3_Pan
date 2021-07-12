@@ -91,10 +91,12 @@
 
       #dialog1 {
         background:rgb(131, 253, 94);
+        height: max-content;
       }
 
       #dialog2 {
         background:rgb(250, 67, 98);
+        height: max-content;
       }
 
       .panpage {
@@ -157,8 +159,8 @@
       .dialog {
         width:300px;
         max-width:80%;
-        height:100px;
-        max-height:70%;
+        height: max-content;
+        max-height:90%;
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
         display:none;
         position:relative;
@@ -167,6 +169,7 @@
       #page12 p {
         margin-top: 430px;
         text-align: center;
+        z-index: 5000;
       }
 
   </style>
@@ -1303,15 +1306,13 @@
           </div>
         </div>
         <div id="dialog1" class="dialog">
-          <h1>Dialog 1</h1>
-          <p>You liked poet!</p>
+          <h1>You liked the poet!</h1>
           <div class="dialog-container">
             <div class="button" onclick="pan(0);">Ok</div>
           </div>
         </div>
         <div id="dialog2" class="dialog">
-          <h1>Dialog 2</h1>
-          <p>You dissed poet!</p>
+          <h1>You DISSliked the poet!</h1>
           <div class="dialog-container">
             <div class="button" onclick="pan(0);">Ok</div>
           </div>
