@@ -110,19 +110,19 @@
       }
 
       .panpage img {
-        position: relative;
         max-width: 380px;;
         max-height: 380px;
         z-index: 1;
       }
 
-      .panpage p {
+      #imgText {
         z-index: 10;
+        display: block;
       }
 
       .dialog-container {
         display:flex;
-        justify-content:flex-end;
+        justify-content:center;
         flex-wrap:nowrap;
         align-items:center;
         position:absolute;
@@ -1313,21 +1313,23 @@
     <div id="outer-container">
       <div id="container">
         <div id="panpage1" class="panpage">
-          <img src="bild3.jpg">
-          <p>Pan right to like or left to disslike!</p>
+          <div id="imgText">
+            <img src="bild3.jpg">
+          </div>
+          <h3>Pan right to like!</h3>
           <div class="menu-container">
             <div id="dissBtn" class="button" onclick="panend(200);">I diss!</div>
             <div id="likeBtn" class="button" onclick="panend(-200);">I like!</div>
           </div>
         </div>
         <div id="dialog1" class="dialog">
-          <h1>You liked the poet!</h1>
+          <h2>You liked the poet!</h2>
         </div>
         <div class="dialog-container">
           <div class="button" onclick="pan(0);">Ok</div>
         </div>
         <div id="dialog2" class="dialog">
-          <h1>You DISSliked the poet!</h1>
+          <h2>You DISSliked the poet!</h2>
         </div>
         <div class="dialog-container">
           <div class="button" onclick="pan(0);">Ok</div>
