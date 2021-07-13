@@ -116,8 +116,15 @@
       }
 
       #imgText {
-        z-index: 10;
-        display: block;
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+
+      #page12 p {
+        position: absolute;
+        bottom: 335px;
+        left: 16px;
       }
 
       .dialog-container {
@@ -126,7 +133,7 @@
         flex-wrap:nowrap;
         align-items:center;
         position:absolute;
-        bottom:0;
+        bottom:25px;
         left:0;
         right:0;
       }
@@ -1315,8 +1322,8 @@
         <div id="panpage1" class="panpage">
           <div id="imgText">
             <img src="bild3.jpg">
+            <p>Pan right to like!</p>
           </div>
-          <h3>Pan right to like!</h3>
           <div class="menu-container">
             <div id="dissBtn" class="button" onclick="panend(200);">I diss!</div>
             <div id="likeBtn" class="button" onclick="panend(-200);">I like!</div>
